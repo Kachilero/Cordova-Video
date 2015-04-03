@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org.cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.alejandro.videoplayer"
+        version="1.0.0">
+    <engines>
+        <engine name="cordova" version=">=3.2.0" />
+    </engines>
+
+    <name>VideoPlayer</name>
+    <description>Play native video</description>
+    <author>Alejanro Cerro && Dawson Loudon</author>
+    <license>MIT</license>
+
+    <js-module src="www/VideoPlayer.js" name="VideoPlayer">
+        <clobbers target="VideoPlayer" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="VideoPlayer">
+                <param name="android-package" value="com.alejandro.videoplayer" />
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+        <source-file src="src/android/VideoPlayer.java" target-dir="src/com/alejandro/videoplayer" />
+    </platform>
+
+</plugin>
