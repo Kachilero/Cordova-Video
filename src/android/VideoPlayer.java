@@ -7,6 +7,11 @@ import java.io.InputStream;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.reflect.Field;
+import java.net.URL;
+import java.net.URLConnection;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,8 +21,7 @@ import android.net.Uri;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
-import org.json.JSONArray;
-import org.json.JSONException;
+
 
 public class VideoPlayerPlugin extends CordovaPluin{
     private static final String YOU_TUBE = "youtube.com";
