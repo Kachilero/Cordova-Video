@@ -42,7 +42,7 @@ public class VideoPlayerPlugin extends CordovaPluin{
             callbackContext.sendPluginResult(new PluginResult(status, result));
         }catch (JSONException e){
             callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
-        }catch (IOException){
+        }catch (IOException e){
             callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.IO_EXCEPTION));
         }
         return true;
