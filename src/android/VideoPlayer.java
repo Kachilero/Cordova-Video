@@ -55,7 +55,11 @@ public class VideoPlayer extends CordovaPlugin{
         Intent intent = null;
         //Checks to see if trying to play youtube
         //TODO change this?
-        if(url.contains(YOU_TUBE)){
+        intent = new Intent(Intent.ACTION_VIEW);
+        intent.setDataAndType(uri, "video/*");
+        this.cordova.getActivity().startActivity(intent);
+
+        /*if(url.contains(YOU_TUBE)){
             //OGNOTE: If we don't do it this way you don't have the option for youtube
             uri = Uri.parse("vnd.youtube:" + uri.getQueryParameter("v"));
             if(isYouTubeInstalled()){
@@ -81,13 +85,13 @@ public class VideoPlayer extends CordovaPlugin{
 
             //Display the video player
             intent = new Intent(Intent.ACTION_VIEW);
-            intent.setDataAndType(uri, "video/*");
+            intent.setDataAndType(uri, "video*//*");
         }else{
             //Display video player
             intent = new Intent(Intent.ACTION_VIEW);
-            intent.setDataAndType(uri, "video/*");
+            intent.setDataAndType(uri, "video*//*");
         }
-        this.cordova.getActivity().startActivity(intent);
+        this.cordova.getActivity().startActivity(intent);*/
     } //end playVideo
 
     private void copy(String fileFrom, String fileTo) throws IOException{
